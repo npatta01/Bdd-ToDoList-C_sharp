@@ -8,7 +8,7 @@ A C# todolist created using MVVM design pattern and bdd priviples
 - Specs/TDD: [Nspec](http://nspec.org/)
 - Mocking: [Nsubstitute](http://nsubstitute.github.io/)
 - Integration Tests: [Specflow](http://www.specflow.org/) and [Microsft CodedUI Framework](http://msdn.microsoft.com/en-us/library/dd286726.aspx)
-
+- UI Components: [MahApps.Metro](http://mahapps.com/MahApps.Metro/)
 
 *Because the project uses CodedUITest, Visual Studio premium and above is required for running the integration tests
 
