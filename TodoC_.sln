@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{392A2EC5-7C25-4976-B1E1-805C51A5FE78}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD80DCDF-6F66-45F9-AB4A-1884235466CE}"
+	ProjectSection(SolutionItems) = preProject
+		TestSettings.runsettings = TestSettings.runsettings
+		TestSettings.testsettings = TestSettings.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoMvvm", "ToDoMvvm\ToDoMvvm.csproj", "{8EF13106-71A3-4923-8BB8-42A0322BA41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoUiTest", "TodoUiTest\TodoUiTest.csproj", "{0C894734-8A6A-4076-B384-C200623BFD34}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8EF13106-71A3-4923-8BB8-42A0322BA41E} = {8EF13106-71A3-4923-8BB8-42A0322BA41E}
+		{EB561613-E4D3-47E5-97FF-3ABE0611D666} = {EB561613-E4D3-47E5-97FF-3ABE0611D666}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoSpecs", "TodoSpecs\ToDoSpecs.csproj", "{66C7DEAD-8535-4179-8F4B-38CD1F5117E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoWpfView", "ToDoWpfView\ToDoWpfView.csproj", "{EB561613-E4D3-47E5-97FF-3ABE0611D666}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EF13106-71A3-4923-8BB8-42A0322BA41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF13106-71A3-4923-8BB8-42A0322BA41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF13106-71A3-4923-8BB8-42A0322BA41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF13106-71A3-4923-8BB8-42A0322BA41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C894734-8A6A-4076-B384-C200623BFD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C894734-8A6A-4076-B384-C200623BFD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C894734-8A6A-4076-B384-C200623BFD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C894734-8A6A-4076-B384-C200623BFD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C7DEAD-8535-4179-8F4B-38CD1F5117E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C7DEAD-8535-4179-8F4B-38CD1F5117E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C7DEAD-8535-4179-8F4B-38CD1F5117E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C7DEAD-8535-4179-8F4B-38CD1F5117E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB561613-E4D3-47E5-97FF-3ABE0611D666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB561613-E4D3-47E5-97FF-3ABE0611D666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB561613-E4D3-47E5-97FF-3ABE0611D666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB561613-E4D3-47E5-97FF-3ABE0611D666}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TodoC_1.vsmdi
+	EndGlobalSection
+EndGlobal

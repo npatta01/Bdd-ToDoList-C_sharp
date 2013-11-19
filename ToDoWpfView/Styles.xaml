@@ -1,0 +1,91 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:toDoMvvm="clr-namespace:ToDoMvvm;assembly=ToDoMvvm"
+                    xmlns:viewModel="clr-namespace:ToDoWpfView.ViewModel">
+
+
+    <Style TargetType="{x:Type TextBox}" x:Key="CompletedTaskItemStyle"    BasedOn="{StaticResource {x:Type TextBox}}"       >
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Completed}" Value="True">
+                <Setter Property="TextDecorations" Value="Strikethrough" />
+                <Setter Property="Foreground" Value="Red" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="ToDoItemTemplate" DataType="toDoMvvm:TaskItem">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.10*" />
+
+                <ColumnDefinition Width="0.70*" />
+                <ColumnDefinition Width="0.05*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid.Resources>
+                <viewModel:ViewModelLocator x:Key="Locator" />
+            </Grid.Resources>
+            <TextBox  Grid.Column="1" Text="{Binding Description}"  Style="{StaticResource CompletedTaskItemStyle}" HorizontalAlignment="Stretch">
+                <AutomationProperties.AutomationId>
+
+                    <MultiBinding StringFormat="Task_{0}-Description">
+                        <Binding Path="Id" />
+                    </MultiBinding>
+                </AutomationProperties.AutomationId>
+            </TextBox>
+
+            <CheckBox Grid.Column="0"   HorizontalAlignment="Left"   IsChecked="{Binding Completed, Mode=OneWay}"   Command="{Binding Source={StaticResource Locator}, Path=Main.ToggleStateOfTask}" CommandParameter="{Binding Mode=OneWay}">
+                <AutomationProperties.AutomationId>
+
+                    <MultiBinding StringFormat="Task_{0}-Toggle">
+                        <Binding Path="Id" />
+                    </MultiBinding>
+                </AutomationProperties.AutomationId>
+            </CheckBox>
+
+
+
+            <Button Grid.Column="2" Content="X" Command="{Binding Source={StaticResource Locator}, Path=Main.DeleteTask}" CommandParameter="{Binding Mode=OneWay}">
+              
+                <AutomationProperties.AutomationId>
+
+                    <MultiBinding StringFormat="Task_{0}-Delete">
+                        <Binding Path="Id" />
+                    </MultiBinding>
+                </AutomationProperties.AutomationId>
+
+            </Button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </Grid>
+    </DataTemplate>
+
+    <Style TargetType="ListBoxItem" x:Key="TabPane"         >
+
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Opacity" Value="0.5" />
+
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="Opacity" Value="1.0" />
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

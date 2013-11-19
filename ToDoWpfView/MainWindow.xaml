@@ -1,0 +1,91 @@
+﻿<controls:MetroWindow  x:Class="ToDoWpfView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
+
+                       Title="ToDoList" Height="300" Width="600"
+                       AutomationProperties.AutomationId="ToDoApp" DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}" Icon="icon.ico">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.10*" />
+            <RowDefinition Height="0.60*" />
+            <RowDefinition Height="0.10*" />
+        </Grid.RowDefinitions>
+
+        <TextBox AutomationProperties.AutomationId="NewTaskForm"  Grid.Row="0" Text="{Binding NewTaskDescription}" controls:TextboxHelper.Watermark="What needs to be done" />
+
+        <Button AutomationProperties.AutomationId="AddTaskBtn"  Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{Binding AddNewTask, Mode=OneWay}">
+
+            <Image Source="/images/add.png" />
+        </Button>
+        <ListView AutomationProperties.AutomationId="TaskList"   Grid.Row="1"  ItemsSource="{Binding VisibleTasks.View}"  HorizontalContentAlignment="Stretch"  ItemTemplate="{StaticResource ToDoItemTemplate}"  Grid.RowSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+
+            <ListBox.ItemContainerStyle>
+
+                <Style >
+
+                    <Setter Property="AutomationProperties.AutomationId">
+                        <Setter.Value>
+                            <MultiBinding StringFormat="Task_{0}">
+                                <Binding Path="Id" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListView>
+
+        <Grid  Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="30*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" AutomationProperties.AutomationId="TasksLeftMessage"  Content="{Binding TasksLeftMessage}">
+
+            </Label>
+
+            <ListBox  Grid.Column="1"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"  HorizontalAlignment="Center" SelectedIndex="{Binding SelectedIndex}"   ItemContainerStyle="{StaticResource  TabPane}" >
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="3" IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+                </ListBox.Resources>
+
+                <Label AutomationProperties.AutomationId="AllPane"  >All</Label>
+                <Label AutomationProperties.AutomationId="ActivePane" >Active</Label>
+                <Label  AutomationProperties.AutomationId="CompletedPane" >Completed</Label>
+            </ListBox>
+
+            <Button Grid.Column="2" AutomationProperties.AutomationId="ClearCompletedButton"   HorizontalAlignment="Right" Command="{Binding DeleteCompleted, Mode=OneWay}" Visibility="{Binding Path=ClearCompletedTasksEnabled, Converter={StaticResource boolVisibConverter}, Mode=OneWay}" >
+                <TextBlock Text="{Binding ClearCompletedMessage}" AutomationProperties.AutomationId="ClearCompletedTaskMessage">
+                    
+                </TextBlock>
+                
+            </Button>
+        </Grid>
+    </Grid>
+</controls:MetroWindow>
