@@ -1,0 +1,45 @@
+TaskListState spec
+  correct values
+    All=0
+    Active=1
+    Completed=2
+TaskListViewModel spec
+  default options
+    selected all task state
+  no task
+    clear completed should be disabled
+    active message is empty
+    clear completed message is empty
+    have no visible tasks
+  completed and active tasks exist
+    clear completed should be enabled
+    active message show appropriate message
+    clear completed shows appropriate message
+    have visible tasks
+    correct items shown in different view
+      shows all items in All task View
+      shows only active items in Active Task View
+      shows only active items in Completed Task View
+  updating a task
+    completing a task
+      item not visible in active
+      item visible in all
+      item visible in complete
+      correct active message
+      correct completed message
+    deleting a task
+      item not visible
+      correct active message
+      correct completed message
+    editing a task
+      shows updated task message
+  clear all completed
+    clear completed shows appropriate message when clicked
+TodoItem spec
+  basic properties
+    new task is false
+  json parsing works
+    all attributes specified
+    missing attributes
+28 Examples, 0 Failed, 0 Pending
+
