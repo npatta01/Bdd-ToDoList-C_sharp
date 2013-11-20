@@ -1,5 +1,6 @@
 A C# todolist created using MVVM design pattern and bdd priviples 
 
+![Screenshot.png](//gh-pages/screenshot.png)
 ### Libraries Used
 - Mvvm library: [Mvvmlight](http://www.galasoft.ch/mvvm/)
 - Specs/TDD: [Nspec](http://nspec.org/)
@@ -19,7 +20,10 @@ A C# todolist created using MVVM design pattern and bdd priviples
 - Install the visual studio extension "NUnit Test Adapter"
 - Under "test" -> "Run", choose "All Tests"
 
-### Sample Files
-- [SpecOutput](/sample/spec_output.txt)
-- [Sample Feature File](sample/Completing.feature)
+### Sample Spec and Specflow File
+- [SpecOutput](/gh-pages/sample/spec_output.txt)
+- [Sample Feature File](/gh-pages/sample/Completing.feature)
+- [Sample Spec File](/gh-pages/sample/TaskRepository_spec.cs)
 
+### Specs Project: [TodoSpecs](TodoSpecs)
+### Integration Test Project: [TodoUiTest](TodoUiTest)
