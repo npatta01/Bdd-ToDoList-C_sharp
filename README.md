@@ -1,6 +1,3 @@
-Bdd-ToDoList-C_sharp
-====================
-
 A C# todolist created using MVVM design pattern and bdd priviples 
 
 ### Libraries Used
@@ -22,6 +19,7 @@ A C# todolist created using MVVM design pattern and bdd priviples
 - Install the visual studio extension "NUnit Test Adapter"
 - Under "test" -> "Run", choose "All Tests"
 
-
-
+### Sample Files
+- [SpecOutput](/sample/spec_output.txt)
+- [Sample Feature File](sample/Completing.feature)
 
