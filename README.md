@@ -1,6 +1,8 @@
 A C# todolist created using MVVM design pattern and bdd priviples 
 
-![Screenshot.png](/gh-pages/sample/screenshot.png)### Libraries Used
+![Screenshot.png](sample/screenshot.png)
+
+### Libraries Used
 - Mvvm library: [Mvvmlight](http://www.galasoft.ch/mvvm/)
 - Specs/TDD: [Nspec](http://nspec.org/)
 - Mocking: [Nsubstitute](http://nsubstitute.github.io/)
@@ -20,7 +22,9 @@ A C# todolist created using MVVM design pattern and bdd priviples
 - Under "test" -> "Run", choose "All Tests"
 
 ### Sample Spec and Specflow File
-[SpecOutput](gh-pages/sample/spec_output.txt)- [Sample Feature File](/gh-pages/sample/Completing.feature)
-[Sample Spec File](sample/TaskRepository_spec.cs)
+- [SpecOutput](sample/spec_output.txt)
+- [Sample Feature File](/gh-pages/sample/Completing.feature)
+- [Sample Spec File](sample/TaskRepository_spec.cs)
+
 ### Specs Project: [TodoSpecs](TodoSpecs)
 ### Integration Test Project: [TodoUiTest](TodoUiTest)
