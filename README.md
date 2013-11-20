@@ -22,7 +22,8 @@ A C# todolist created using MVVM design pattern and bdd priviples
 - Under "test" -> "Run", choose "All Tests"
 
 ### Sample Spec and Specflow File
-- [SpecOutput](sample/spec_output.txt)- [Sample Feature File](/gh-pages/sample/Completing.feature)
+- [SpecOutput](sample/spec_output.txt)
+- [Sample Feature File](/gh-pages/sample/Completing.feature)
 - [Sample Spec File](sample/TaskRepository_spec.cs)
 
 ### Specs Project: [TodoSpecs](TodoSpecs)
