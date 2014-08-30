@@ -20,7 +20,7 @@ using NUnit.Framework;
  * Visual Studio will detect this and will give you a window which you can use to attach a debugger.
  */
 
-
+/*
 [TestFixture]
 public class DebuggerShim
 {
@@ -44,3 +44,4 @@ public class DebuggerShim
         results.Failures().Count().should_be(0);
     }
 }
+*/
